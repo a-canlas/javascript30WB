@@ -81,19 +81,19 @@
       font-size: 4em;
     }
 
-    .panel p:first-child {
+    .panel > *:first-child {
       transform: translateY(-100%);
     }
 
-    .panel.active p:first-child {
+    .panel.open-active > *:first-child {
       transform: translateY(0);
     }
 
-    .panel p:last-child {
+    .panel > *:last-child {
       transform: translateY(100%);
     }
 
-    .panel.active p:last-child {
+    .panel.open-active >  *:last-child {
       transform: translateY(0);
     }
 
