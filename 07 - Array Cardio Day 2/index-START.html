@@ -39,7 +39,7 @@
     // Find the comment with this ID
     // delete the comment with the ID of 823423
     const index = comments.findIndex(seek);
-    delete comments[index]['text'];
+    comments.splice(index, 1);
     console.log(comments);
   </script>
 </body>
