@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <p onclick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
@@ -18,28 +18,48 @@
     }
 
     // Regular
-
+    console.log('Hello world!');
     // Interpolated
-
+    var name = 'boop';
+    console.log('Hello %s . How are you?', name);
     // Styled
-
+    console.log('%c This is chartreuse', 'color: chartreuse;');
     // warning!
-
+    console.warn('Danger Will Robinson!');
     // Error :|
-
+    console.error('You broke the internet');
     // Info
-
+    console.info('Maintain 6 feet distance');
     // Testing
-
+    console.assert(2 === 3, 'That is incorrect');
     // clearing
-
+    // console.clear();
     // Viewing DOM Elements
-
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p); // shows all of the attributes and properties of an element
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.groupCollapsed(dog.name)
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd();
+    })
     // counting
-
+    console.count('Anastasia');
+    console.count('Anastasia');
+    console.count('Anastasia');
+    console.count('Anastasia');
     // timing
+    console.time('fetch');
+    fetch('https://api.github.com/users/a-canlas')
+      .then(blob => blob.json())
+      .then(data => {
+        console.log(data);
+        console.timeEnd('fetch');
+        })
+      .catch(err => console.error(err));
 
   </script>
 </body>
