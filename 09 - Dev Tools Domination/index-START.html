@@ -46,8 +46,19 @@
       console.groupEnd();
     })
     // counting
-
+    console.count('Anastasia');
+    console.count('Anastasia');
+    console.count('Anastasia');
+    console.count('Anastasia');
     // timing
+    console.time('fetch');
+    fetch('https://api.github.com/users/a-canlas')
+      .then(blob => blob.json())
+      .then(data => {
+        console.log(data);
+        console.timeEnd('fetch');
+        })
+      .catch(err => console.error(err));
 
   </script>
 </body>
