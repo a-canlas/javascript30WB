@@ -96,6 +96,13 @@
   </div>
 
 <script>
+  function selectMult(e){
+    if(e.key === 'Shift'){
+      console.log(e);
+    }
+  }
+  document.addEventListener('keydown', selectMult);
+
 </script>
 </body>
 </html>
