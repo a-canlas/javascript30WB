@@ -96,6 +96,44 @@
   </div>
 
 <script>
+  // First grab all of the checkboxes
+  // Add event listener to inputs for click
+  // Define a handler function that will take e as parameter
+  // Declare a variable to eventually hold the value of the last checked checkbox. Do not set a value to it yet
+  // Inside the handler, declare a variable for inBetween and set it to false
+  // Add conditional to check if shift was pressed down and the checkbox was checked
+      // if so, loop over checkboxes with forEach
+      // if the current checkbox equals to either this or lastChecked, toggle inBetween
+         // if inBetween is truthy, this.checked is true
+  // Thank you Wes!!
+
+
+  let lastChecked; // will eventually hold the value of the lastChecked box
+
+  function handleCheck(e){
+   let inBetween = false // this will toggle when between two checked boxes
+   // Check if shift key was pressed and if checkbox was checked:
+   if(e.shiftKey && this.checked){
+     // We will now loop over all of the checkboxes
+     checkboxes.forEach(checkbox => {
+       // This conditional will toggle inBetween
+       if(checkbox === this || checkbox === lastChecked){
+         inBetween = !inBetween;
+       }
+       if(inBetween){
+         // If inBetween is truthy, make the current checkbox checked
+         checkbox.checked = true;
+       }
+     })
+   }
+    lastChecked = this;
+  }
+  // Grabbing all checkboxes
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  // Add event listener to all of the checkboxes
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
+
 </script>
 </body>
 </html>
