@@ -119,8 +119,10 @@
   let lastChecked;
 
   function handleCheck(e){
-    console.log(e); // logs the event
-    console.log(this); // logs the clicked on checkbox
+   // Check if shift key was pressed and if checkbox was checked:
+   if(e.shiftKey && this.checked){
+     console.log('Shift pressed and box checked');
+   }
     lastChecked = this;
   }
   // First grab all of the checkboxes
