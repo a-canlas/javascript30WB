@@ -96,9 +96,9 @@
   </div>
 
 <script>
-  let shiftPressed = false;
-  let firstItemClicked = null;
-  let secondItemClicked = null;
+  // let shiftPressed = false;
+  // let firstItemClicked = null;
+  // let secondItemClicked = null;
 
   // function selectMult(e){
   //   shiftPressed = e.key === 'Shift' ? true : false;
@@ -115,9 +115,13 @@
   //     secondItemClicked = null;
   //   }
   // }
+
+  let lastChecked;
+
   function handleCheck(e){
     console.log(e); // logs the event
     console.log(this); // logs the clicked on checkbox
+    lastChecked = this;
   }
   // First grab all of the checkboxes
   // document.addEventListener('keydown', selectMult);
