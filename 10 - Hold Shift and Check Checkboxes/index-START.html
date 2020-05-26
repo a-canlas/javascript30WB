@@ -96,12 +96,33 @@
   </div>
 
 <script>
+  let shiftPressed = false;
+  let firstItemClicked = null;
+  let secondItemClicked = null;
+
   function selectMult(e){
-    if(e.key === 'Shift'){
-      console.log(e);
+    shiftPressed = e.key === 'Shift' ? true : false;
+    console.log(shiftPressed);
+  }
+
+  function recordItemClicked(e) {
+    if(!firstItemClicked){
+      firstItemClicked = e;
+    } else if(!secondItemClicked){
+      secondItemClicked = e;
+    } else {
+      firstItemClicked = null;
+      secondItemClicked = null;
     }
   }
+
   document.addEventListener('keydown', selectMult);
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  // inbox.forEach(item => {
+  //   item.childNodes[1].addEventListener('change', recordItemClicked);
+  // });
+  // console.log(inbox);
+  console.log(checkboxes);
 
 </script>
 </body>
