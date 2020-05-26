@@ -116,10 +116,11 @@
   //   }
   // }
   function handleCheck(e){
-
+    console.log(e); // logs the event
+    console.log(this); // logs the clicked on checkbox
   }
   // First grab all of the checkboxes
-  document.addEventListener('keydown', selectMult);
+  // document.addEventListener('keydown', selectMult);
   const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
   // Add event listener to all of the checkboxes
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
