@@ -107,6 +107,24 @@
       // if the current checkbox equals to either this or lastChecked, toggle inBetween
          // if inBetween is truthy, this.checked is true
   // Thank you Wes!!
+  let lastChecked;
+  function handleClick(e){
+    let inBetween = false;
+    if(e.shiftKey){
+      checkboxes.forEach(checkbox => {
+        if(checkbox === this || checkbox === lastChecked){
+          inBetween = !inBetween;
+        }
+        if(inBetween){
+          checkbox.checked = true;
+        }
+      })
+    }
+    lastChecked = this;
+  }
+
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick));
   </script>
   </body>
 </html>
