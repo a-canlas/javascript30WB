@@ -30,10 +30,16 @@ function handleRangeUpdate(){
 
 }
 
+function handleProgress(){
+  const percent = (display.currentTime / display.duration) * 100;
+  progress.style.flexBasis = `${percent}%`;
+}
+
 // Hook up handler functions with listeners
 display.addEventListener('click', togglePlay);
 display.addEventListener('play', updateButton);
 display.addEventListener('pause', updateButton);
+display.addEventListener('timeupdate', handleProgress);
 toggle.addEventListener('click', togglePlay);
 
 skipButtons.forEach(button => button.addEventListener('click', skip));
