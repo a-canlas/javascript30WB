@@ -1,7 +1,6 @@
 // Grab all player elements
 const player = document.querySelector('.player');
 const display = player.querySelector('.viewer');
-const controls = player.querySelector('.player__controls');
 const progressBar = player.querySelector('.progress');
 const progress = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
@@ -35,6 +34,11 @@ function handleProgress(){
   progress.style.flexBasis = `${percent}%`;
 }
 
+function scrub(e){
+  const scrubTime = (e.offsetX / progressBar.offsetWidth) * display.duration;
+  display.currentTime = scrubTime;
+}
+
 // Hook up handler functions with listeners
 display.addEventListener('click', togglePlay);
 display.addEventListener('play', updateButton);
@@ -45,3 +49,4 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+progressBar.addEventListener('click', scrub);
