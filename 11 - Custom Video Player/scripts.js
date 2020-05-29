@@ -20,7 +20,9 @@ function updateButton(){
 }
 
 function skip(){
-  console.log('Skipping');
+  const skipAmount = parseInt(this.dataset.skip);
+  display.currentTime += skipAmount;
+
 }
 
 // Hook up handler functions with listeners
