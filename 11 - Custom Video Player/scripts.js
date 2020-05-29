@@ -19,8 +19,14 @@ function updateButton(){
   toggle.textContent = icon;
 }
 
+function skip(){
+  console.log('Skipping');
+}
+
 // Hook up handler functions with listeners
 display.addEventListener('click', togglePlay);
 display.addEventListener('play', updateButton);
 display.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
+
+skipButtons.forEach(button => button.addEventListener('click', skip));
