@@ -14,6 +14,13 @@ function togglePlay() {
   display[method]();
 }
 
+function updateButton(){
+  const icon = this.paused ? '►' : '❚ ❚';
+  toggle.textContent = icon;
+}
+
 // Hook up handler functions with listeners
 display.addEventListener('click', togglePlay);
+display.addEventListener('play', updateButton);
+display.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
