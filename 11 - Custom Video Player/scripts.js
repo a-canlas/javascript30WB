@@ -37,6 +37,7 @@ function handleProgress(){
 function scrub(e){
   const scrubTime = (e.offsetX / progressBar.offsetWidth) * display.duration;
   display.currentTime = scrubTime;
+
 }
 
 // Hook up handler functions with listeners
@@ -49,4 +50,9 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+
+let isClicked = false;
 progressBar.addEventListener('click', scrub);
+progressBar.addEventListener('mousemove', (e) => isClicked && scrub(e));
+progressBar.addEventListener('mousedown', () => isClicked = true);
+progressBar.addEventListener('mouseup', () => isClicked = false);
