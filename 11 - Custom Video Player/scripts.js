@@ -10,11 +10,8 @@ const ranges = player.querySelectorAll('.player__slider');
 
 // Create handlers
 function togglePlay() {
-  if(display.paused){
-    display.play();
-  } else {
-    display.pause();
-  }
+  const method = display.paused ? 'play' : 'pause';
+  display[method]();
 }
 
 // Hook up handler functions with listeners
