@@ -16,3 +16,4 @@ function togglePlay() {
 
 // Hook up handler functions with listeners
 display.addEventListener('click', togglePlay);
+toggle.addEventListener('click', togglePlay);
