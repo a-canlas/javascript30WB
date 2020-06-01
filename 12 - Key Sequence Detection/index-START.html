@@ -8,9 +8,11 @@
 <body>
 <script>
   let enteredCode = [];
-  let masterCode = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRight';
+  let masterCode = 'sparkle';
   function checkCode(e){
-    console.log(e.key);
+    // console.log(e.key);
+    enteredCode.push(e.key);
+    console.log(enteredCode);
   }
   window.addEventListener('keyup', checkCode);
 </script>
