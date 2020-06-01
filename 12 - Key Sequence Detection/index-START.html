@@ -12,7 +12,9 @@
   function checkCode(e){
     enteredCode.push(e.key);
     enteredCode.splice(-masterCode.length - 1, enteredCode.length - masterCode.length);
-    console.log(enteredCode);
+    if(enteredCode.join('') === masterCode){
+      cornify_add();
+    }
   }
   window.addEventListener('keyup', checkCode);
 </script>
