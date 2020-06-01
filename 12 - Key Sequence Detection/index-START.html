@@ -10,8 +10,8 @@
   let enteredCode = [];
   let masterCode = 'sparkle';
   function checkCode(e){
-    // console.log(e.key);
     enteredCode.push(e.key);
+    enteredCode.splice(-masterCode.length - 1, enteredCode.length - masterCode.length);
     console.log(enteredCode);
   }
   window.addEventListener('keyup', checkCode);
