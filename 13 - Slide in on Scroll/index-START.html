@@ -63,7 +63,10 @@
     function slideImages(e){
       console.log(window.scrollY);
       slideInImages.forEach(image => {
+        // Half way through the image
         const slideInAt = (window.scrollY + window.innerHeight) - image.height /2;
+        // bottom of the image
+        const imageBottom = image.offsetTop + image.height;
       });
 
     }
