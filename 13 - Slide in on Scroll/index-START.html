@@ -61,7 +61,11 @@
     const slideInImages = document.querySelectorAll('.slide-in');
 
     function slideImages(e){
-      console.log(e);
+      console.log(window.scrollY);
+      slideInImages.forEach(image => {
+        const slideInAt = (window.scrollY + window.innerHeight) - image.height /2;
+      });
+
     }
 
     window.addEventListener('scroll', debounce(slideImages));
