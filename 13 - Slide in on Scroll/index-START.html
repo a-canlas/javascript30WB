@@ -59,6 +59,11 @@
     }
 
     const slideInImages = document.querySelectorAll('.slide-in');
+
+    function slideImages(e){
+      console.log(e);
+    }
+
     window.addEventListener('scroll', debounce(slideImages));
 
   </script>
